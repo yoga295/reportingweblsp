@@ -6,7 +6,7 @@ $user=$_POST['username'];
 $pass=$_POST['password'];
 $telp=$_POST['telp'];
 
-$sql=mysql_query("INSERT INTO masyarakat values('$nik','$nama','$user','$pass','$telp')");
+$sql = mysqli_query($koneksi, "INSERT INTO masyarakat values('$nik','$nama','$user','$pass','$telp')");
 if(sql){
     ?>
     <script type="text/javascript">

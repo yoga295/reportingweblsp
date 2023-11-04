@@ -47,9 +47,8 @@
                                     </thead>
                                     <?php
                                     require 'koneksi.php';
-                                    $sql = mysql_query ("select * from pengaduan where nik='$_SESSION[nik]'");
+                                    $sql = mysqli_query ("select * from pengaduan where nik='$_SESSION[nik]'");
                                     while ($data=mysql_fetch_array($sql)){
-
                                     ?>
                                     <tbody>
                                         <tr>
@@ -58,15 +57,15 @@
                                             <td><?php echo $data['nik']; ?></td>
                                             <td><?php echo $data['isi_laporan']; ?></td>
                                             <td><?php echo $data['foto']; ?></td>
-                                            <td><?php echo $data['id_pengaduan']; ?></td>
+                                            <td><?php echo $data['status']; ?></td>
                                             <td>
-                                            <a href="#" class="btn btn-info btn-icon-split">
+                                            <a href="?url=detail_pengaduan&id=<?php echo $data ['id_pengaduan']; ?>" class="btn btn-info btn-icon-split">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-info"></i>
                                                 </span>
                                                 <span class="text">Detail</span>
                                             </a>
-                                            <a href="#" class="btn btn-primary btn-icon-split">
+                                            <a href="?url=lihat_tanggapan&id=<?php echo $data ['id_pengaduan']; ?>" class="btn btn-primary btn-icon-split">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-eye"></i>
                                                 </span>
