@@ -7,7 +7,7 @@ $cek = mysqli_num_rows($sql);
 if($cek>0){
     $data=mysqli_fetch_array($sql);
     session_start();
-    $_SESSION['user']=$user;
+    $_SESSION['username']=$user;
     $_SESSION['nik']=$data ['nik'];
     header('localtion:masyarakat.php');
 }else{
